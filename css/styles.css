@@ -281,10 +281,12 @@ h3 {
     text-decoration: none;
     padding: 2px;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .galeria>li>img {
     width: 100%;
+
 }
 
 .galeria>li:nth-of-type(4n+1),
@@ -292,8 +294,11 @@ h3 {
     filter: brightness(30%);
 }
 
+
 .galeria>li :hover {
-    filter: brightness(120%);
+    filter: grayscale(100%);
+    transform: rotate(45deg) scale(2.3);
+    transition: 1.2 all ease-in-out 0.2;
 }
 
 @media (max-width: 800px) {
