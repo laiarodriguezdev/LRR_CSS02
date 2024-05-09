@@ -28,12 +28,14 @@
 
     <main>
         <section id="nosaltres" >
-            <h2>Nosaltres</h2>
-            <div class="grup_nosaltres">
-                <div class="esq"><img width="100%" src="./img/x0.jpg"></div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus reiciendis, excepturi
-                    aspernatur tenetur est aut vel voluptate vitae accusantium itaque harum incidunt quidem dicta ipsam
-                    aperiam alias. Repudiandae, minima debitis! Nostrum omnis nulla, tenetur voluptatibus ullam beatae dolor? </p>
+            <h2 id="usTitle">Nosaltres</h2>
+            <div id="sectionSlide">
+                <div class="grup_nosaltres">
+                    <div class="esq"><img width="100%" src="./img/x0.jpg"></div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus reiciendis, excepturi
+                        aspernatur tenetur est aut vel voluptate vitae accusantium itaque harum incidunt quidem dicta ipsam
+                        aperiam alias. Repudiandae, minima debitis! Nostrum omnis nulla, tenetur voluptatibus ullam beatae dolor? </p>
+                </div>
             </div>
             <div class="grup_nosaltres">
                 <div class="dreta"><img width="100%" src="./img/x0.jpg"></div>
@@ -124,6 +126,15 @@
             <div class="peu2">Restaurant Els coberts</div>
         </footer>
     </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#usTitle").click(function () {
+                $("#sectionSlide").slideToggle("slow");
+            });
+        });
+    </script>
 </body>
 
 </html>
