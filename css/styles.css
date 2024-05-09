@@ -354,6 +354,16 @@ h3 {
     }
 }
 
+/* video */
+/* *************************************** */
+
+video{
+    display: flex;
+    margin: auto;
+    width: 80%;
+    margin-bottom: 1rem;
+}
+
 /* peu de pàgina */
 /* *************************************** */
 footer {
