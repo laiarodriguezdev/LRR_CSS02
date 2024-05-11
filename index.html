@@ -154,23 +154,42 @@
         const playPauseButton = document.getElementById('playPauseButton');
         const muteButton = document.getElementById('muteButton');
 
+        function isVideoInView() {
+            const rect = video.getBoundingClientRect();
+                return (
+                rect.top >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+                );
+        }
+
+        function reproducirVideo() {
+            if (isVideoInView() && video.paused) {
+                playPauseButton.src = './icons/pause_circle.png';
+                muteButton.src = './icons/volume_up.png';
+                video.muted = true;
+                video.play();
+            }
+        }
+
+        window.onscroll = reproducirVideo;
+
         playPauseButton.addEventListener('click', function() {
         if (video.paused || video.ended) {
             video.play();
-            playPauseButton.src = './icons/pause_circle.png'; // Cambiar a la imagen de pausa
+            playPauseButton.src = './icons/pause_circle.png';
         } else {
             video.pause();
-            playPauseButton.src = './icons/play_circle.png'; // Cambiar a la imagen de reproducción
+            playPauseButton.src = './icons/play_circle.png';
         }
         });
 
         muteButton.addEventListener('click', function() {
         if (video.muted) {
             video.muted = false;
-            muteButton.src = './icons/volume_off.png'; // Cambiar a la imagen de desactivar silencio
+            muteButton.src = './icons/volume_off.png';
         } else {
             video.muted = true;
-            muteButton.src = './icons/volume_up.png'; // Cambiar a la imagen de activar silencio
+            muteButton.src = './icons/volume_up.png'; 
         }
         });
 
