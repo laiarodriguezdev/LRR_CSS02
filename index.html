@@ -120,11 +120,17 @@
 
         <section id="video">
             <h2>Video del restaurant</h2>
-            <video controls muted>
-                <source src="./videos/LRR_Projecte_1.mp4" type="video/mp4">
-                <source src="./videos/LRR_Projecte_02.ogg" type="video/ogg">
-                <source src="./videos/LRR_Projecte_Web.webm" type="video/webm">
-              </video>
+            <div class="container-video">
+                <video controls id="mi-video" autostart="false">
+                    <source src="./videos/LRR_Projecte_1.mp4" type="video/mp4">
+                    <source src="./videos/LRR_Projecte_02.ogg" type="video/ogg">
+                    <source src="./videos/LRR_Projecte_Web.webm" type="video/webm">
+                </video>
+                <div id="control-icon" class="controls-icon">
+                    <img id="playPauseButton" class="icon" src="./icons/play_circle.png" alt="Play">
+                    <img id="muteButton" class="icon" src="./icons/volume_off.png" alt="Mute">
+                  </div>
+            </div>
         </section>
 
         <footer>
@@ -143,6 +149,32 @@
                 $("#sectionSlide").slideToggle("slow");
             });
         });
+
+        const video = document.querySelector("video");
+        const playPauseButton = document.getElementById('playPauseButton');
+        const muteButton = document.getElementById('muteButton');
+
+        playPauseButton.addEventListener('click', function() {
+        if (video.paused || video.ended) {
+            video.play();
+            playPauseButton.src = './icons/pause_circle.png'; // Cambiar a la imagen de pausa
+        } else {
+            video.pause();
+            playPauseButton.src = './icons/play_circle.png'; // Cambiar a la imagen de reproducción
+        }
+        });
+
+        muteButton.addEventListener('click', function() {
+        if (video.muted) {
+            video.muted = false;
+            muteButton.src = './icons/volume_off.png'; // Cambiar a la imagen de desactivar silencio
+        } else {
+            video.muted = true;
+            muteButton.src = './icons/volume_up.png'; // Cambiar a la imagen de activar silencio
+        }
+        });
+
+
     </script>
 </body>
 
