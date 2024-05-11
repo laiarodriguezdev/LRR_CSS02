@@ -9,11 +9,11 @@
 </head>
 
 <body>
-    <nav>
+    <nav id="navbar">
         <ul class="nav">
-            <li><a href="#">Nosaltres</a></li>
-            <li><a href="#">Carta</a></li>
-            <li><a href="#">Galeria</a></li>
+            <li><a href="#nosaltres">Nosaltres</a></li>
+            <li><a href="#carta">Carta</a></li>
+            <li><a href="#galeria">Galeria</a></li>
         </ul>
     </nav>
 
@@ -193,6 +193,14 @@
         }
         });
 
+        window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {
+            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+                document.getElementById("navbar").style.padding = "10px 10px";
+            } else {
+                document.getElementById("navbar").style.padding = "80px 10px";
+            }
+        }
 
     </script>
 </body>
