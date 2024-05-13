@@ -20,9 +20,18 @@
 }
 
 .ipod-img{
+    display: flex;
     width: 100%;
     margin: 0 auto;
     height: 50%;
     border-radius: 16px 16px;
     background-color: red;
+}
+
+.ipod-img img{
+    margin: auto;
+    width: 80%;
+    height: 80%;
+    border-radius: 100%;
+    border:2px solid cyan;
 }
