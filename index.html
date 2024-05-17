@@ -4,15 +4,14 @@
     <meta charset="utf-8" />
     <title>Laia Rodríguez Ramos</title>
     <link rel="stylesheet" href="css/styles.css" />
-    <script src="./js/script.js"></script>
   </head>
 
   <body>
     <main class="ipod-general">
         <section class="ipod-img">
-          <div class="img">
+          <div class="container-img">
             <!-- AIXO HO HAURE DE CANVIAR.  -->
-            
+            <img src="../LRR_CSS02/img/daniel-robert-dinu-FsLgfIvBoVA-unsplash.jpg" id="imgSong" class="imgSong"/>
           </div>
         </section>
         <section class="ipod-desc">
@@ -22,7 +21,13 @@
         </section>
         <section class="ipod-functional">
           aqui els controls
+
+          <div class="ipod-slider">
+            <input type="range" min="1" max="100" value="50" class="slider" id="sliderIpod">
+            <p>Volum: <span id="volumValue"></span></p>
+          </div>          
         </section>
     </main>
   </body>
+  <script src="./js/script.js"></script>
 </html>

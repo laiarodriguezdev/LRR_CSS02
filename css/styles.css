@@ -54,18 +54,24 @@ body{
     }
 }
 
-.ipod-img .img{
+.container-img{
     width: 90px;
     height: 90px;
     border-radius: 100%;
-    background-color:#1c1c1c99;
-    background-blend-mode: overlay;
-    background-image: url(../img/daniel-robert-dinu-FsLgfIvBoVA-unsplash.jpg);
-    background-size: cover;
+    overflow: hidden;
+    /* background-color:#1c1c1c99;
+    background-blend-mode: overlay; */
     border:5px solid var(--green-2);
     outline:1px solid var(--black-1);
     outline-offset: 10px;
+}
+
+.imgSong{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
     animation: rotate 4s linear infinite;
+    filter: grayscale(0.76);
 }
 
 /* SECTION DESCRIPCIO */

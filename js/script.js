@@ -25,3 +25,16 @@ const songs = [
 let titleSong = document.getElementById("title");
 let artistSong = document.getElementById("artist");
 let timeSong = document.getElementById("time");
+
+
+
+
+/* SECTION SEGUIMENT VOLUM */
+/* *************************************** */
+var slider = document.getElementById("sliderIpod");
+var output = document.getElementById("volumValue");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
