@@ -8,39 +8,47 @@
 
   <body>
     <main class="ipod-general">
-        <section class="ipod-img">
-          <div class="container-img">
-            <img src="../LRR_CSS02/img/daniel-robert-dinu-FsLgfIvBoVA-unsplash.jpg" id="imgSong" class="imgSong"/>
+      <section class="ipod-img">
+        <div class="container-img">
+          <img src="" id="imgSong" class="imgSong" />
+        </div>
+      </section>
+      <section class="ipod-desc">
+        <h2 id="title"></h2>
+        <h3 id="artist"></h3>
+        <h4 id="time"></h4>
+      </section>
+      <section class="ipod-functional">
+        <audio id="audio" style="display: none"></audio>
+        <div class="ipod-controls">
+          <div class="icon">
+            <img src="./icons/previous.png" id="previousSong" />
           </div>
-        </section>
-        <section class="ipod-desc">
-          <h2 id="title"></h2>
-          <h3 id="artist"></h3>
-          <h4 id="time"></h4>
-        </section>
-        <section class="ipod-functional">
-          <div class="ipod-controls">
-            <div class="icon">
-              <img src="./icons/previous.png" id="previousSong"/>
-            </div>
-            <div class="icon">
-              <img src="./icons/play.png" id="playSong"/>
-            </div>
-            <div class="icon">
-              <img src="./icons/next.png" id="nextSong"/>
-            </div>
+          <div class="icon">
+            <img src="./icons/play.png" id="playSong" />
           </div>
-          <div class="ipod-slider">
-            <div class="icon">
-              <img src="./icons/volume_off.png" id="volumnOff"/>
-            </div>
-            <input type="range" min="0" max="100" value="50" class="slider" id="sliderIpod">
-            <div class="icon">
-              <img src="./icons/volume_up.png" id="volumnUp"/>
-            </div>
-            <p>Volum: <span id="volumValue"></span></p>
-          </div>          
-        </section>
+          <div class="icon">
+            <img src="./icons/next.png" id="nextSong" />
+          </div>
+        </div>
+        <div class="ipod-slider">
+          <div class="icon">
+            <img src="./icons/volume_off.png" id="volumnOff" />
+          </div>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="50"
+            class="slider"
+            id="sliderIpod"
+          />
+          <div class="icon">
+            <img src="./icons/volume_up.png" id="volumnUp" />
+          </div>
+          <p>Volum: <span id="volumValue">50</span></p>
+        </div>
+      </section>
     </main>
   </body>
   <script src="./js/script.js"></script>
