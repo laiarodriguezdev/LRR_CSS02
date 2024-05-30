@@ -37,16 +37,16 @@ let isPlaying = false;
 
 async function fetchSongs() {
   try {
-      const response = await fetch("../json/songs.json");
-      if (!response.ok) {
-          throw new Error('No carrega correctament el JSON');
-      }
-      const data = await response.json();
-      songsArray = data.songs;
-      audioElement.volume = 0.5;
-      loadSong(currentSongIndex);
+    const response = await fetch("../json/songs.json");
+    if (!response.ok) {
+      throw new Error('No carrega correctament el JSON');
+    }
+    const data = await response.json();
+    songsArray = data.songs;
+    audioElement.volume = 0.5;
+    loadSong(currentSongIndex);
   } catch (error) {
-      console.error('Error al carregar el JSON: ', error);
+    console.error('Error al carregar el JSON: ', error);
   }
 }
 
@@ -57,8 +57,20 @@ function loadSong(index) {
   imgSong.src = song.image;
   audioElement.src = song.audio;
   audioElement.volume = slider.value / 100;
-  // MIRAR AIXO DE NAN. ¿PERQUE NO AGAFA EL SONG.DURATION O AUDIOELEMENT.DURATION?
-  timeSong.textContent = "0:00 - " + song.duration; 
+  
+  let songDuration = song.duration ? song.duration : "N/A";
+  timeSong.textContent = "0:00 - " + songDuration;
+
+  audioElement.addEventListener('loadedmetadata', () => {
+    const duration = audioElement.duration ? formatDuration(audioElement.duration) : "N/A";
+    timeSong.textContent = "0:00 - " + duration;
+  });
+}
+
+function formatDuration(seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const secs = Math.floor(seconds % 60);
+  return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
 }
 
 function playPauseSong() {
